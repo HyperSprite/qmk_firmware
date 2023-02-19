@@ -16,8 +16,8 @@
 
 
 /*
- * grave added in top right to go to ERG mode on Wahoo Systm software
- * because when you're on the rivet, you want the key to be easy to hit
+ * grave added in place of num-lock for ERG mode on Wahoo Systm software
+ * removed key pad numbers in place of normal numbers because Systm ignores them
  */
 
 #include QMK_KEYBOARD_H
@@ -26,12 +26,12 @@ enum layers { _BASE, _FN1};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_numpad_6x4(
-        MO(_FN1), KC_ESC,  KC_BSPC,   KC_GRAVE,
-        KC_NUM,   KC_PSLS, KC_PAST,   KC_PMNS,
-        KC_P7,    KC_P8,   KC_P9,
-        KC_P4,    KC_P5,   KC_P6,     KC_PPLS,
-        KC_P1,    KC_P2,   KC_P3,
-        KC_P0,             KC_PDOT,   KC_PENT),
+        MO(_FN1), KC_MUTE, KC_VOLD,  KC_VOLU,
+        KC_GRAVE, KC_PSLS, KC_PAST,  KC_DOWN,
+        KC_7,     KC_8,    KC_9,
+        KC_4,     KC_5,    KC_6,     KC_UP,
+        KC_1,     KC_2,    KC_3,
+        KC_0,              KC_ESC,  KC_SPACE),
 
     [_FN1] = LAYOUT_numpad_6x4(
         _______,    KC_MUTE, KC_VOLD,   KC_VOLU,
